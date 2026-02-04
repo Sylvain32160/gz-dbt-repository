@@ -5,6 +5,7 @@ SELECT
   ,date_date
   ,b.products_id
   ,revenue
+  ,quantity
   ,ROUND(purchase_price * quantity,2) AS purchase_cost
   ,ROUND(revenue - purchase_price * quantity,2) AS margin
  FROM {{ ref("stg_raw__raw_gz_sales")}} as a 
