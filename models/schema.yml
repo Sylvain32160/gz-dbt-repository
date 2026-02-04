@@ -1,0 +1,37 @@
+
+version: 2
+
+sources:
+   - name: raw
+     database: meta-aura-484810-e5
+     schema: gz_raw_data
+     loader: bigquery
+     description: GreenWeez Data
+     tables:
+       - name: product
+         identifier: raw_gz_product
+         description: list of products
+         columns:
+          - name: products_id
+            description: private key
+            tests:
+              - unique
+              - not_null
+          - name: purchase_cost
+            description: cost to buy the product
+       - name: sales
+         identifier: raw_gz_sales
+         description: list of orders
+         columns:
+         - name: orders_id
+         - name: date_date
+         - name: pdt_id
+       - name: ship
+         identifier: raw_gz_ship
+         description: information on ship fees and cost (included logistic costs)
+         columns:
+         - name: orders_id
+           tests:
+             - unique
+             - not_null
+             
