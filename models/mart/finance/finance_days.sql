@@ -7,6 +7,7 @@ SELECT
     ,ROUND(AVG(revenue),2) AS average_basket
     ,ROUND(SUM(operational_margin),2) AS operational_margin
     ,ROUND(SUM(purchase_cost),2) AS purchase_cost
+    ,ROUND(SUM(ship_cost),2) AS ship_cost
     ,ROUND(SUM(shipping_fee),2) AS shipping_fee
     ,ROUND(SUM(log_cost),2) AS log_cost
     ,ROUND(SUM(total_products),0) AS total_products
